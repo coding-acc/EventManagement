@@ -1,0 +1,1 @@
+C:\wamp\bin\php\php7.4.26\php-win.exe -f C:\C:\wamp64\www\Presentation_Timer\reminders.php

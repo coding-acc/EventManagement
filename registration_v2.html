@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+  <style>
+    h2
+    {
+        font-size:25px;
+    }
+        body
+        {
+            background: ##c0c0c0;
+            font-size: 15px
+        }
+        input {
+
+            border: 2px solid blue;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #020202;
+            background: LightGray
+            }
+            button 
+            {
+                
+                cursor: pointer;
+                color: #fff;
+                background: LightGray;               
+                font-size: 16px
+            }
+            div{
+                text-align: center;
+				border-radius:4px;
+                border: 2px solid grey;
+                width:63%
+            }
+    </style>
+<script>
+	$(document).ready(function()
+	{
+		$("#email").keyup(function()
+		{//runs everytime there is an input on the textbx
+			var email = $("#email").val();
+			$.post("log.php", 
+			{
+				log: email
+			}, function(data, status)
+			{
+				$("#test.").html(data);
+			});
+		});
+
+		$("#sub").click( function () 
+		{
+			var e = $("#email :input").serializeArray().	
+		}); 
+	});
+</script>
+
+</head>
+<body>
+	<h2>Complete details below to Register</h2>
+
+	<div>
+		<label>Email Address:</label>
+		<input type="text" name="email">
+		<br><br>
+		<label>Password:</label>
+		<input type="text" name="pass1">
+		<br><br>
+		<label>Confirm Password:</label>
+		<input type="text" name="pass2">
+		
+
+
+	</div>
+	<br>
+	<button id="sub">Submit</button>
+	<p id="test"></p>
+	<span id="result"></span>
+
+</body>
+</html>
